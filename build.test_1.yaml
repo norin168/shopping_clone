@@ -1,0 +1,66 @@
+   targets:
+      $default:
+        builders:
+          # also be sure, that builder name is correct
+          # i guess it has pattern like this X:X:
+          # in my case json_serializable:json_serializable:
+          # noted: the route_generator will auto build only files ending with _page.dart changing 
+          auto_route_generator:auto_route_generator:
+            enabled: true
+            generate_for:
+              include:
+                - lib/**_page.dart
+                - lib/**_screen.dart
+                # or full path to file here
+
+          # noted: the json_serializable will be automatically build with files ending with _model.dart _entity.dart .model.dart .entity.dart changing
+          json_serializable:
+            enabled: false
+            generate_for:
+              include:
+                - lib/**.model.dart
+                - lib/**.entity.dart 
+                - lib/**_model.dart
+                - lib/**_entity.dart
+
+          #   options:
+          #     explicit_to_json: true
+          #     include_if_null: false
+
+          # noted: freezed will be automatically build when files ending with _bloc.dart _event.dart _event.dart _usecase.dart _repository_impl.dart _service_impl.dart _mapper.dart changing
+          freezed|freezed:
+            enabled: false
+            generate_for:
+              include: 
+                - lib/**_event.dart
+                - lib/**_bloc.dart
+                - lib/**_state.dart
+                - lib/**_usecase.dart
+                - lib/**_repository_impl.dart
+                - lib/**_service.dart
+                - lib/**_service_impl.dart
+                - lib/**_mapper.dart
+
+          injectable_generator|injectable_builder:
+            enabled: false
+            generate_for:
+              include:
+                - lib/**_di.dart
+                - lib/**.model.dart
+                - lib/**.entity.dart 
+                - lib/**_model.dart
+                - lib/**_entity.dart
+                - lib/**_event.dart
+                - lib/**_bloc.dart
+                - lib/**_state.dart
+                - lib/**_usecase.dart
+                - lib/**_repository_impl.dart
+                - lib/**_service.dart
+                - lib/**_service_impl.dart
+                - lib/**_mapper.dart
+
+          # injectable_generator|injectable_config_builder:
+          #   enabled: true
+          #   generate_for:
+          #     include:
+          #       - lib/infrastructure/injection/injection.dart

@@ -1,0 +1,41 @@
+# How RUN => dart pub run flutter_flavorizr
+# Don't for get to check your main files such as main.dart, main_dev.dart, main_staging.dart, main_prod.dart
+
+app:
+  android:
+    flavorDimensions: "flavor-type"
+
+flavors:
+  # Develop
+  dev:
+    app:
+      name: "Flutter App Dev"
+      icon: assets/app_icon/dev.png
+
+    android:
+      applicationId: "com.example.w_navigator.dev"
+    ios:
+      bundleId: "com.example.w_navigator.dev"
+
+  # Staging or UAT
+  staging:
+    app:
+      name: "Flutter App Staging"
+      icon: assets/app_icon/staging.png
+    android:
+      applicationId: "com.example.w_navigator.staging"
+    ios:
+      bundleId: "com.example.w_navigator.staging"
+
+  # Production
+  prod:
+    app:
+      name: "Flutter App Prod"
+      icon: assets/app_icon/prod.png
+
+    android:
+      applicationId: "com.example.w_navigator"
+    ios:
+      bundleId: "com.example.w_navigator"
+
+ide: idea

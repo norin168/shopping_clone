@@ -1,0 +1,6 @@
+
+
+/// run auto_route
+// * must use as _page.dart
+
+dart run build_runner build -d --build-filter="lib/helper/navigator/app_router.dart,**_page.dart"
